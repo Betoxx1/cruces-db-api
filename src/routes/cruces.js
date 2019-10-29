@@ -2,7 +2,7 @@ module.exports = app => {
   
     const Cruces = app.db.models.Cruces;
   
-    app.route('/cruces')
+    app.route('/api/cruces')
       .get((req, res) => {
         Cruces.findAll({})
           .then(result => res.json(result))
@@ -18,7 +18,7 @@ module.exports = app => {
           });
       });
   
-    app.route('/cruces/:id')
+    app.route('/api/cruces/:id')
       .get((req, res) => {
         Cruces.findOne({where: req.params})
           .then(result => {
